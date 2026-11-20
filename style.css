@@ -1,0 +1,446 @@
+/* BODY - Style entire webpage */
+body {
+  background-color: #fff8f5;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* LOGO - Style the website name */
+.logo {
+  color: #f16b5b; /*Orange text*/
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* LOGO IMAGE - COntrol the size of image */
+.logo img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+/* HEADER - Arrange logo and nav side by side */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  /* Seeprate the sticky header from scrolling content */
+  border-bottom: 1px solid #d4dfea;
+  box-shadow: 0 2px 8px rgba(32, 61, 97, 0.08);
+}
+
+/* HEADER - Coral background when hovering over link */
+header nav a:hover {
+  background-color: #fa6b5b;
+  color: white;
+}
+
+/* HEADER - smooth color transition */
+header nav a {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* NAVIGATION - Styles the menu links */
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* NAV LINKS - Styles links inside the navigattion menu */
+nav a {
+  color: #243b59;
+  text-decoration: none;
+}
+
+/* LOGIN BUTTON - Styles the Log in nav link */
+.login-btn {
+  background-color: #f16b5b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* LOGIN HOVER - Change color when mouse is over the button */
+.login-btn:hover {
+  background-color: #d95648;
+}
+
+/* HERO SECTION - Style the welcome area */
+.hero {
+  background-color: #eaf3fa;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+/* HERO HEADING - Styles the welcome heading */
+.hero h1 {
+  color: #243b59;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* HERO PARAGRAPH - Styles the welcome description */
+.hero p {
+  color: #52647b;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* SEARCH BOX - Position the search bar*/
+.search-box {
+  margin-top: 30px;
+}
+
+/* SEARCH INPUT - Style the firld where users type */
+.search-box input {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px 20px;
+  border: 1px solid #d9e5ef;
+  border-radius: 30px;
+  background-color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* SEARCH FOCUS - Highlights the serach field when selected */
+.search-box input:focus {
+  outline: 2px solid #f16b5b;
+  outline-offset: 2px;
+}
+
+/* RESTAURANTS SECTION - Styles the restuarant listing area */
+.restaurants {
+  padding: 25px 30px;
+  background-color: #f5f8fc;
+}
+
+/* RESTAURANTS HEADING - Style the section title */
+.restaurants h2 {
+  color: #243b59;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* RESTAURANT CARD - Style each restaurant */
+.restaurant-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #d9e5ef;
+  box-sizing: border-box;
+  /* Position */
+  position: relative;
+  /* Arrange content vertically */
+  display: flex;
+  flex-direction: column;
+}
+
+/* CARD infront of nearby cards */
+.restaurant-card:has(.menu-popup[style*="display: block"]) {
+  z-index: 200;
+}
+
+/* RESTAURANT CARD HOVER - Highlight a card when hovered */
+.restaurant-card:hover {
+  box-shadow: 0 6px 18px rgba(36, 59, 89, 0.15);
+  transform: translateY(-4px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* RESTAURANT NAME - Style restaurant heading */
+.restaurant-card h3 {
+  color: #243b59;
+  font-size: 20px;
+}
+
+/* RESTAURANT LOCATION - Style the city */
+.restaurant-card p {
+  color: #52647b;
+  font-size: 14px;
+}
+
+/* MENU BUTTON - Style the View Menu link */
+.menu-btn {
+  display: inline-block;
+  background-color: #f16b5b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MENU BUTTON HOVER */
+.menu-btn:hover {
+  background-color: #d95648;
+}
+
+/* MENU OPTIONS - Arrange Daily and Weekly buttons side by side */
+.menu-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* RESTAURANT GRID - Arrange restaurant cards in column */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* FOOTER - Style the fooytr of website */
+footer {
+  background-color: #243b59;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* FOOTER PARAGRAPH - Removes default spacing */
+footer p {
+  margin: 0;
+}
+
+/* RESPONSIVE DESIGN - Style for mobile screens */
+@media (max-width: 600px) {
+  /* HEADER - Stack logo and navigation vertically */
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* HERO HEADING - Smaller text on mobile screen */
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  /* MOBILE NAVIGATION - Keep links neatly arranged */
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* MOBILE RESTAURANTS - Reduce spacing on small screens */
+  .restaurants {
+    padding: 25px 15px;
+  }
+}
+
+/* FLOATING MENU - Position the popup near the menu button */
+.restaurant-card {
+  position: relative;
+}
+
+/* POPUP - Hidden by default */
+.menu-popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 320px;
+  max-width: 90vw;
+  max-height: 350px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #d9e5ef;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* FAVOURITES - Style the heart button */
+.favourite-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ff6b61;
+  cursor: pointer;
+}
+
+/* FAVAOURITES - Change the heart when selected */
+.favourite-btn.active {
+  color: #e63946;
+}
+
+/* RESTAURANT CARD - Allow Positioning insode the card */
+.restaurant-card {
+  position: relative;
+}
+
+/* FAVOURITES - Position heart in top-right corner */
+.favourite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* LOGIN & REGISTRATION - Style both form sections */
+.login-section,
+.register-section {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #d9e5ef;
+  border-radius: 15px;
+}
+
+/* FORM - Arrange labels and inputs vertically */
+.login-section form,
+.register-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* LOGIN & REGISTRATION - Style form buttons */
+.login-section button,
+.register-section button {
+  background-color: #f16b5b;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* BUTTON HOVER - Darken when mouse moves over button */
+.login-section button:hover,
+.register-section button:hover {
+  background-color: #d95749;
+}
+
+/* LOGIN & REGISTRATION - Style the input fields */
+.login-section input,
+.register-section input {
+  padding: 12px;
+  border: 1px solid #d9e5ef;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* INPUT FOCUS - Highlight the selected field */
+.login-section input:focus,
+.register-section input:focus {
+  outline: 2px solid #f16b5b;
+  border-color: #f16b5b;
+}
+
+/* LOGIN & REGISTRATION - Hide forms until opened */
+.login-section,
+.register-section {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  width: min(90%, 450px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* MODAL OVERLAY - Darken the webpage behind the popup */
+#modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* LOGIN POPUP - Position the X button */
+#close-login {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #243b59;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* CLOSE BUTTON HOVER - Change X color */
+#close-login:hover {
+  color: f16b5b;
+  background-color: transparent;
+}
+
+/* REGISTRATION POPUP - Position the X button */
+#close-register {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #243b59;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* CLOSE BUTTON HOVER - Change X color */
+#close-register:hover {
+  color: f16b5b;
+  background-color: transparent;
+}
+
+/* ACCOUNT MENU - small dropdown below username */
+.account-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background-color: white;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10002;
+}
+
+/* ACCOUNT MENU - Logout link */
+.account-menu a {
+  display: block;
+  padding: 10px;
+  color: #102b46;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* ACCOUNT MENU - Hover effect */
+.account-menu a:hover {
+  background-color: #f1f5f9;
+}

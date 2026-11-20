@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunch Spot | Student Restaurants</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- LOGO - Display logo -->
+      <a href="index.html" class="logo">
+        <img src="images/LunchSpot-Logo.png" alt="LunchSpot Logo" />
+      </a>
+
+      <nav>
+        <a href="#restaurants" id="restaurants-link">Restaurants</a>
+        <a href="#" id="favourites-link">Favourites</a>
+        <a href="#login" id="login-link">Log in</a>
+        <!-- ACCOUNT - Logout Dropdown menu -->
+        <div id="account-menu" class="account-menu">
+          <a href="#" id="logout-link">Log out</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN - Contains the primary content of our webpage-->
+    <main>
+      <!-- HERO SECTION - Welcome area of the website-->
+      <section class="hero">
+        <h1>Find your perfect student lunch!</h1>
+
+        <!-- Short intro to LunchSpot-->
+        <p>
+          Discover student restaurants and delicious daily menus across Finland
+        </p>
+
+        <!--SEARCH BAR - Allow user to search for restaurants-->
+        <div class="search-box">
+          <input
+            type="search"
+            id="restaurant-search"
+            placeholder="Search restaurants or cities...."
+            aria-label="Search restaurants or cities"
+          />
+        </div>
+      </section>
+
+      <!--RESTAURANTS SECTION - Displays student restaurants -->
+      <section id="restaurants" class="restaurants">
+        <h2>Explore Restaurants</h2>
+
+        <!--RESTAURANT GRID - JavaScript will display API restaurants here-->
+        <div class="restaurant-grid" id="restaurant-list">
+          <!-- RESTAURANT CARD - Display information about one restaurant-->
+          <article class="restaurant-card">
+            <h3>Campus Restaurant</h3>
+            <p>📍 Helsinki</p>
+
+            <!-- MENU OPTIONS - Allow users to choose daily or weekly menus -->
+            <div class="menu-options">
+              <button type="button" class="menu-btn">Daily Menu</button>
+              <button type="button" class="menu-btn">Weekly Menu</button>
+            </div>
+          </article>
+
+          <!-- SECOND RESTAURANT CARD - Sample restaurant in Espoo -->
+          <article class="restaurant-card">
+            <h3>Student Bistro</h3>
+            <p>📍 Espoo</p>
+
+            <!-- MENU OPTIONS - Allow users to choose daily or weekly menus -->
+            <div class="menu-options">
+              <button type="button" class="menu-btn">Daily Menu</button>
+              <button type="button" class="menu-btn">Weekly Menu</button>
+            </div>
+          </article>
+
+          <!-- THIRD RESTAURANT CARD - Sample restaurant in Vantaa -->
+          <article class="restaurant-card">
+            <h3>Campus Kitchen</h3>
+            <p>📍 Vantaa</p>
+
+            <!-- MENU OPTIONS - Allow users to choose daily or weekly menus -->
+            <div class="menu-options">
+              <button type="button" class="menu-btn">Daily Menu</button>
+              <button type="button" class="menu-btn">Weekly Menu</button>
+            </div>
+          </article>
+        </div>
+
+        <p id="no-results" style="display: none">
+          No restaurant found. Try another name or city.
+        </p>
+        <!-- FAVOURITES - Message when no restaurants are saved -->
+        <p id="empty-favourites" style="display: none">
+          ♡ No favourite restaurants yet. Click the heart on a restaurant to
+          save it here.
+        </p>
+      </section>
+
+      <!-- POPUP - Dark background behind Login and Registration -->
+      <div id="modal-overlay"></div>
+
+      <!-- LOGIN - Display the logged in user's name -->
+      <p id="welcome-message"></p>
+      <!-- LOGIN - Allow existing users to sign in -->
+      <section id="login" class="login-section">
+        <!-- LOGIN POPUP - Close button -->
+        <button type="button" id="close-login" aria-label="Close login">
+          ×
+        </button>
+        <h2>Log in to LunchSpot</h2>
+
+        <form id="login-form" autocomplete="off">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" required />
+
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required />
+
+          <button type="submit">Log in</button>
+        </form>
+
+        <p>
+          Don't have an account?
+          <a href="#register">Register here</a>
+        </p>
+      </section>
+
+      <!-- REGISTRATION - Allow new users to create an account -->
+      <section id="register" class="register-section">
+        <!-- REGISTRATION POPUP - Close button -->
+        <button
+          type="button"
+          id="close-register"
+          aria-label="Close registration"
+        >
+          ×
+        </button>
+        <h2>Create an Account</h2>
+
+        <form id="register-form" autocomplete="off">
+          <label for="register-username">Username</label>
+          <input type="text" id="register-username" required />
+
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" required />
+
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" required />
+
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER - Information displayed at the bottom of the website -->
+    <footer>
+      <p>© 2026 LunchSpot | Find your perfect student lunch!</p>
+    </footer>
+    <!-- JAVASCRIPT - Connects our JavaScript file to website -->
+    <script src="script.js"></script>
+  </body>
+</html>
