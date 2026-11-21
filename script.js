@@ -530,8 +530,8 @@ logoutLink.addEventListener("click", (event) => {
   // Restore the Login text in the header
   document.getElementById("login-link").textContent = "Log in";
 
-  // Hide Logout
-  logoutLink.style.display = "none";
+  // LOGOUT - Hide the entire account dropdown
+  document.getElementById("account-menu").style.display = "none";
 
   // Clear the welcome message
   document.getElementById("welcome-message").textContent = "";

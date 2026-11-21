@@ -274,9 +274,11 @@ footer p {
 
 /* FAVOURITES - Style the heart button */
 .favourite-btn {
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 24px;
+  padding: 0;
+  font-size: 28px;
+  line-height: 1;
   color: #ff6b61;
   cursor: pointer;
 }
@@ -433,6 +435,7 @@ footer p {
 .account-menu a {
   display: block;
   padding: 10px;
+  background-color: white;
   color: #102b46;
   font-size: 16px;
   font-weight: 500;
@@ -442,5 +445,6 @@ footer p {
 
 /* ACCOUNT MENU - Hover effect */
 .account-menu a:hover {
-  background-color: #f1f5f9;
+  background-color: #fa6b5b;
+  color: white;
 }
